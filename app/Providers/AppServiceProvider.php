@@ -21,9 +21,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-          $global = profile_setting::first();
-        
+        //  $global = profile_setting::first();
+
     // share ke semua view
-        View::share('global', $global);
+        //View::share('global', $global);
     }
 }
