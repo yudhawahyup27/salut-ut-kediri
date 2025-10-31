@@ -6,7 +6,7 @@
     <main class="main">
         <!-- Page Title -->
         <div class="page-title dark-background position-relative"
-            style="background-image: url('{{ asset('storage/' . $news->image) }}'); background-size: cover; background-position: center; min-height: 450px;">
+            style="background-image: url('{{ asset('storage/public_html/storage/' . $news->image) }}'); background-size: cover; background-position: center; min-height: 450px;">
             <div class="overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%); position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
             <div class="container position-relative" style="z-index: 2; padding-top: 100px;">
                 <div class="row justify-content-center">

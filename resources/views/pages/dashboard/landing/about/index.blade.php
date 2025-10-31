@@ -18,7 +18,7 @@
                             <div class="mt-2">
                                 <label class="form-label text-muted small">Image saat ini:</label>
                                 <div>
-                                    <img src="{{ asset('storage/' . $about->image) }}" alt="Banner Image"
+                                    <img src="{{ asset('storage/public_html/storage/' . $about->image) }}" alt="Banner Image"
                                         class="img-thumbnail border-2" style="height: 80px; object-fit: cover;">
                                 </div>
                             </div>

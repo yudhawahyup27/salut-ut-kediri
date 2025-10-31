@@ -26,7 +26,7 @@
                         <input type="file" name="image" class="form-control">
                         @if ($item->image)
                             <div class="mt-2">
-                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" width="150">
+                                <img src="{{ asset('storage/public_html/storage/' . $item->image) }}" alt="{{ $item->title }}" width="150">
                             </div>
                         @endif
                     </div>

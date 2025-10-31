@@ -25,7 +25,7 @@
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
                     @if($about->image)
                         <div class="hero-image-wrapper">
-                            <img src="{{ asset('storage/' . $about->image) }}"
+                            <img src="{{ asset('storage/public_html/storage/' . $about->image) }}"
                                  alt="{{ $about->title }}"
                                  class="img-fluid rounded-4 shadow-lg"
                                  style="max-height: 400px; width: 100%; object-fit: cover;">
@@ -113,7 +113,7 @@
                     <div class="d-flex flex-wrap justify-content-center gap-4">
                         @foreach($partners ?? [] as $partner)
                             <div class="partner-logo p-3 bg-white rounded-4 shadow-sm">
-                                <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->name }}" class="img-fluid" style="max-height: 60px;">
+                                <img src="{{ asset('storage/public_html/storage/' . $partner->logo) }}" alt="{{ $partner->name }}" class="img-fluid" style="max-height: 60px;">
                             </div>
                         @endforeach
                     </div>

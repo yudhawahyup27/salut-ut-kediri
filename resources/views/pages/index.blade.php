@@ -5,7 +5,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
         <div class="hero-container">
-            <img src="{{ asset('storage/' . $banner->image) }}" alt="{{ $banner->title }}" class="video-background">
+            <img src="{{ asset('storage/public_html/storage/' . $banner->image) }}" alt="{{ $banner->title }}" class="video-background">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row align-items-center">
@@ -166,7 +166,7 @@
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
                     <div class="image-stack">
                         <div class="image-stack-item image-stack-item-top" data-aos="zoom-in" data-aos-delay="400">
-                            <img src="{{ asset('storage/' . $about->image) }}" alt="Campus Building"
+                            <img src="{{ asset('storage/public_html/storage/' . $about->image) }}" alt="Campus Building"
                                 class="img-fluid rounded-4 shadow-lg">
                         </div>
                     </div>
@@ -226,7 +226,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div
                                 class="partner-wrapper d-flex align-items-center justify-content-center w-100 p-3 text-center">
-                                <img src="{{ asset('storage/' . $partner->logo) }}" class="img-fluid" width="125"
+                                <img src="{{ asset('storage/public_html/storage/' . $partner->logo) }}" class="img-fluid" width="125"
                                     class="img-fluid" width="125" alt="" />
 
                             </div><!--.partner-wrapper-->
@@ -475,7 +475,7 @@
                         <article>
                             <div class="post-img">
                                 @if ($n->image ?? false)
-                                    <img src="{{ asset('storage/' . $n->image) }}" alt="{{ $n->title }}"
+                                    <img src="{{ asset('storage/public_html/storage/' . $n->image) }}" alt="{{ $n->title }}"
                                         class="img-fluid">
                                 @endif
                             </div>
@@ -532,7 +532,7 @@
                                     <div class="col-md-4">
                                         <div class="program-image-wrapper">
                                             @if ($n->image ?? false)
-                                                <img src="{{ asset('storage/' . $e->image) }}" alt="{{ $n->title }}"
+                                                <img src="{{ asset('storage/public_html/storage/' . $e->image) }}" alt="{{ $n->title }}"
                                                     class="img-fluid">
                                             @endif
                                         </div>

@@ -27,7 +27,7 @@
                         <label>Logo</label>
                         <input type="file" name="logo" class="form-control">
                         @if ($profile->logo)
-                            <img src="{{ asset('storage/' . $profile->logo) }}" class="mt-2" style="height: 60px">
+                            <img src="{{ asset('storage/public_html/storage/' . $profile->logo) }}" class="mt-2" style="height: 60px">
                         @endif
                     </div>
 

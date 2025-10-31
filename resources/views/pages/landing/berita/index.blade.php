@@ -52,7 +52,7 @@
                                 <article class="news-card h-100">
                                     <div class="news-card-image position-relative overflow-hidden">
                                         @if ($item->image)
-                                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                                            <img src="{{ asset('storage/public_html/storage/' . $item->image) }}" alt="{{ $item->title }}"
                                                 class="w-100" style="height: 250px; object-fit: cover;">
                                         @else
                                             <div class="w-100 d-flex align-items-center justify-content-center bg-light"
