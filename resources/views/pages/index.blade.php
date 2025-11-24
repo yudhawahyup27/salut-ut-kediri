@@ -5,7 +5,8 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
         <div class="hero-container">
-            <img src="{{ asset('storage/public_html/storage/' . $banner->image) }}" alt="{{ $banner->title }}" class="video-background">
+            <img src="{{ asset('storage/public_html/storage/' . $banner->image) }}" alt="{{ $banner->title }}"
+                class="video-background">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row align-items-center">
@@ -13,10 +14,10 @@
                     <div class="col-lg-7" data-aos="zoom-out" data-aos-delay="100">
                         <div class="hero-content">
                             <div class="d-flex gap-2 mb-2">
-                                <div class="bg-white rounded p-1 logo-box text-center">
+                                {{-- <div class="bg-white rounded p-1 logo-box text-center">
                                     <img src="https://www.ut.ac.id/wp-content/uploads/2015/11/logo-ut-small-transparent-300x226.png"
                                         alt="Logo" class="mx-auto d-block" width="50">
-                                </div>
+                                </div> --}}
                                 <h2 class="fw-bolder">{{ $banner->title }}</h2>
                             </div>
                             <small class="text-warning">{{ $banner->subtitle }}</small>
@@ -117,7 +118,7 @@
                 <div class="col-lg-6 pe-lg-5" data-aos="fade-right" data-aos-delay="200">
                     <h2 class="display-6 fw-bold mb-4 text-warning">{{ $about->title }}</h2>
 
-                    <p class="lead mb-4">{!! Str::limit($about->desc, 150) !!}</p>
+                    <p class="lead mb-4">{!! $about->desc !!}</p>
                     <div class="d-flex flex-wrap gap-4 mb-4">
                         @php
                             use Carbon\Carbon;
@@ -215,26 +216,27 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-4 col-lg-5 my-3">
-                    <span class="badge rounded-0 d-inline-block px-3 py-2 mb-3 fw-normal">our clients</span>
+                    <span class=" rounded-0 d-inline-block px-3 py-2 mb-3 fw-normal">our clients</span>
                     <h2 class="display-6 mb-4 fw-semibold">Our partners support us always</h2>
                     <p class="mb-4">We collaborate with industry leaders to bring you the best services and solutions.
                         Our partners are integral to our success and growth.</p>
                 </div><!--.col-grid-->
                 <div class="col-xl-7 col-lg-7 offset-xl-1 my-3">
                     <div class="row g-0">
-                            @foreach ($partners as $partner)
-                        <div class="col-md-4 col-sm-6">
-                            <div
-                                class="partner-wrapper d-flex align-items-center justify-content-center w-100 p-3 text-center">
-                                <img src="{{ asset('storage/public_html/storage/' . $partner->logo) }}" class="img-fluid" width="125"
-                                    class="img-fluid" width="125" alt="" />
+                        @foreach ($partners as $partner)
+                            <div class="col-md-4 col-sm-6">
+                                <div
+                                    class="partner-wrapper d-flex align-items-center justify-content-center w-100 p-3 text-center">
+                                    <img src="{{ asset('storage/public_html/storage/' . $partner->logo) }}"
+                                        class="img-fluid" width="125" class="img-fluid" width="125"
+                                        alt="" />
 
-                            </div><!--.partner-wrapper-->
-                            @endforeach
-                        </div><!--.col-grid-->
-                    </div><!--.row-->
-                </div><!--.col-grid-->
-            </div><!--.row-->
+                                </div><!--.partner-wrapper-->
+                        @endforeach
+                    </div><!--.col-grid-->
+                </div><!--.row-->
+            </div><!--.col-grid-->
+        </div><!--.row-->
         </div><!--.container-->
     </section>
     <!-- Featured Programs Section -->
@@ -472,23 +474,23 @@
 
                 @forelse ($news as $n)
                     <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <article>
-                            <div class="post-img">
-                                @if ($n->image ?? false)
-                                    <img src="{{ asset('storage/public_html/storage/' . $n->image) }}" alt="{{ $n->title }}"
-                                        class="img-fluid">
-                                @endif
-                            </div>
+                        <a class="" href="{{ route('landing.news.show', $n->slug) }}">
 
-                            <h2 class="title">{{ $n->title }}</h2>
+                            <article>
+                                <div class="post-img">
+                                    @if ($n->image ?? false)
+                                        <img src="{{ asset('storage/public_html/storage/' . $n->image) }}"
+                                            alt="{{ $n->title }}" class="img-fluid">
+                                    @endif
+                                </div>
 
-                            <p>{!! Str::limit($n->content, 60, '...') !!}</p>
+                                <h2 class="title">{{ $n->title }}</h2>
 
-                            <a class="bg-primary p-2 rounded text-white"
-                                href="{{ route('landing.news.show', $n->slug) }}">
-                                Baca Selengkapnya
-                            </a>
-                        </article>
+                                <p>{!! Str::limit($n->content, 60, '...') !!}</p>
+
+
+                            </article>
+                        </a>
                     </div>
                 @empty
                     <div class="col-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -526,16 +528,17 @@
                 <div class="row g-4 isotope-container">
                     @forelse ($event as $e)
                         <div class="col-lg-6 isotope-item filter-bachelor" data-aos="zoom-in" data-aos-delay="100">
+                            <a href="{{ route('landing.event.show', $e->slug) }}">
                             <div class="program-item">
                                 <div class="program-badge">{{ $e->category_event }}</div>
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <div class="program-image-wrapper">
-                                            @if ($n->image ?? false)
-                                                <img src="{{ asset('storage/public_html/storage/' . $e->image) }}" alt="{{ $n->title }}"
-                                                    class="img-fluid">
-                                            @endif
-                                        </div>
+                                            <div class="program-image-wrapper">
+                                                @if ($n->image ?? false)
+                                                    <img src="{{ asset('storage/public_html/storage/' . $e->image) }}"
+                                                        alt="{{ $n->title }}" class="img-fluid">
+                                                @endif
+                                            </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="program-content">
@@ -546,13 +549,12 @@
                                         <span><i class="bi bi-calendar3"></i> Fall &amp; Spring</span>
                                     </div> --}}
                                             <p>{!! Str::limit($e->content, 20, '...') !!}</p>
-                                            <a href="{{ route('landing.event.show', $e->slug) }}"
-                                                class="program-btn"><span>Learn More</span> <i
-                                                    class="bi bi-arrow-right"></i></a>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </a>
                         </div>
                     @empty
                         <div class="col-12 isotope-item filter-bachelor d-flex justify-content-center" data-aos="fade-up"
